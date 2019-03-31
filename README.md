@@ -9,18 +9,20 @@
         {
             var string1 = String(document.getElementById("first_string").value);
             var string2 = String(document.getElementById("second_string").value);
+            var string3 = string1;
+            var string4 = string2;
             var len1 = string1.length;
             var len2 = string2.length;
             while(1)
             {
                 if(len1 == 0 && len2 == 0)
                 {
-                    document.getElementById("show_result").value = string1 + '=' + string2;
+                    document.getElementById("show_result").value = string3 + ' = ' + string4;
                     break;
                 }
                 if(len1 == 0 && len2 != 0 || len1 != 0 && len2 == 0)
                 {
-                    document.getElementById("show_result").value = string1 + '!=' + string2;
+                    document.getElementById("show_result").value = string3 + ' != ' + string4;
                     break;
                 }
                 if(len1 > 0&& len2 > 0)
@@ -30,14 +32,14 @@
                     char2 = string2.charAt(0);
                     if(char1 != char2)
                     {
-                        document.getElementById("show_result").value = string1 + '!=' + string2;
+                        document.getElementById("show_result").value = string3 + ' != ' + string4;
                         break;
                     }
                     else
                     {
-                        string1 = string1.substring(0);
+                        string1 = string1.substring(1);
                         len1 = string1.length;
-                        string2 = string2.substring(0);
+                        string2 = string2.substring(1);
                         len2 = string2.length;
                     }
                 }
@@ -89,4 +91,3 @@
 </table>
 </body>
 </html>
-
